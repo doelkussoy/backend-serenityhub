@@ -16,7 +16,7 @@ const mongodbAtlas = `mongodb://${maUser}:${maPassword}@${maServer}/${dbName}?re
 
 const localConnection = `mongodb://${dbUser}:${dbPassword}@${dbHost}:${dbPort}/${dbName}?authSource=admin`;
 
-mongoose.connect('mongodb+srv://asoyy:android1412@serenityhub.br70oht.mongodb.net/', {
+mongoose.connect('mongodb://localhost:27017/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
