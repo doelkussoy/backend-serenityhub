@@ -1,7 +1,7 @@
 {
   "name": "backend-serenityhub",
   "version": "1.0.0",
-  "description": "> SKRIPSI QOIS ABDUL QUDUS",
+  "description": "> SKRIPSI Doel Kussoy",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/test.js",

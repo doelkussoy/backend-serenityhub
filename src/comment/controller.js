@@ -21,7 +21,7 @@ async function addComment(req, res, next) {
     if (comment) {
       return res.json({
         status: 'ok',
-        message: 'comment added',
+        message: 'Komentar telah ditambahkan',
         idComment: comment._id,
       });
     }

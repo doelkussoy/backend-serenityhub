@@ -207,7 +207,7 @@ describe('API Endpoints', function () {
   //         res.should.have.status(200, 'Endpoint /comment/:id tidak merespons dengan status 200');
   //         res.body.should.be.a('object', 'Respon dari endpoint /comment/:id bukan objek');
   //         res.body.should.have.property('status').eql('ok', 'Properti status dalam respon bukan "ok"');
-  //         res.body.should.have.property('message').eql('comment added', 'Properti message dalam respon bukan "comment added"');
+  //         res.body.should.have.property('message').eql('Komentar telah ditambahkan', 'Properti message dalam respon bukan "Komentar telah ditambahkan"');
   //         done();
   //       });
   //   });
