@@ -38,8 +38,8 @@ describe('API Endpoints', function () {
             }
             if (res.body.message === undefined) {
               errors.push('Properti message tidak ada dalam respons');
-            } else if (res.body.message !== 'register successfuly') {
-              errors.push(`Properti message dalam respons bukan "register successfuly", tetapi "${res.body.message}"`);
+            } else if (res.body.message !== 'Berhasil mendaftar') {
+              errors.push(`Properti message dalam respons bukan "Berhasil mendaftar", tetapi "${res.body.message}"`);
             }
           }
           if (errors.length > 0) {
@@ -72,8 +72,8 @@ describe('API Endpoints', function () {
             } else {
               if (res.body.message === undefined) {
                 errors.push('Properti message tidak ada dalam respons');
-              } else if (res.body.message !== 'logged in successfully') {
-                errors.push(`Properti message dalam respons bukan "logged in successfully", tetapi "${res.body.message}"`);
+              } else if (res.body.message !== 'Berhasil masuk') {
+                errors.push(`Properti message dalam respons bukan "Berhasil masuk", tetapi "${res.body.message}"`);
               }
               if (res.body.token === undefined) {
                 errors.push('Properti token tidak ada dalam respons');
@@ -137,8 +137,8 @@ describe('API Endpoints', function () {
             }
             if (res.body.message === undefined) {
               errors.push('Properti message tidak ada dalam respons');
-            } else if (res.body.message !== 'report sent successfully') {
-              errors.push(`Properti message dalam respons bukan "report sent successfully", tetapi "${res.body.message}"`);
+            } else if (res.body.message !== 'Laporan berhasil terkirim') {
+              errors.push(`Properti message dalam respons bukan "Laporan berhasil terkirim", tetapi "${res.body.message}"`);
             }
             if (res.body.idReport === undefined) {
               errors.push('Properti idReport/Data tidak ada dalam respons');
@@ -230,8 +230,8 @@ describe('API Endpoints', function () {
             }
             if (res.body.message === undefined) {
               errors.push('- Properti message tidak ada dalam respons');
-            } else if (res.body.message !== 'Logout successfully') {
-              errors.push(`- Properti message dalam respons bukan "Logout successfully", tetapi "${res.body.message}"`);
+            } else if (res.body.message !== 'Berhasil keluar') {
+              errors.push(`- Properti message dalam respons bukan "Berhasil keluar", tetapi "${res.body.message}"`);
             }
             if (errors.length > 0) {
               console.log(errors.join('\n'));

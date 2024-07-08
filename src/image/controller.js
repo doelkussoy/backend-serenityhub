@@ -17,7 +17,7 @@ router.post('/uploadimage', upload.single('image'), (req, res) => {
   if (!req.user) {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   const file = req.file;

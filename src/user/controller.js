@@ -4,7 +4,7 @@ async function getOfficer(req, res, next) {
   if (!req.user) {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   try {
@@ -12,7 +12,7 @@ async function getOfficer(req, res, next) {
     if (!userRole === 'admin') {
       res.json({
         error: 1,
-        message: 'your not allowed access',
+        message: 'Kamu tidak memiliki akses',
       });
     } else {
       let { limit = 8, skip = 0, unitwork = '' } = req.query;
@@ -51,7 +51,7 @@ async function deleteOfficer(req, res, next) {
   if (!req.user) {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   try {
@@ -59,7 +59,7 @@ async function deleteOfficer(req, res, next) {
     if (!userRole === 'admin') {
       res.json({
         error: 1,
-        message: 'your not allowed access',
+        message: 'Kamu tidak memiliki akses',
       });
     } else {
       const deleteOfficer = await User.findOneAndDelete({ _id: req.params.id });

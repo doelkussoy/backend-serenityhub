@@ -4,7 +4,7 @@ async function addCategory(req, res, next) {
   if (!req.user) {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   try {
@@ -13,7 +13,7 @@ async function addCategory(req, res, next) {
     if (userRole === 'user') {
       res.json({
         error: 1,
-        message: 'your not allowed access',
+        message: 'Kamu tidak memiliki akses',
       });
     } else {
       const newCategory = new Category({ ...payload });
@@ -27,7 +27,7 @@ async function addCategory(req, res, next) {
       }
     }
   } catch (err) {
-    if (err && err.name === 'ValidationError') {
+    if (err && err.name === 'Error') {
       return res.json({
         error: 1,
         message: err.message,
@@ -62,7 +62,7 @@ async function deleteCategory(req, res, next) {
   if (!req.user && userRole === 'user') {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   try {

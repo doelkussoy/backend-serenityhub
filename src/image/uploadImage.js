@@ -17,7 +17,7 @@ router.post('/upload/image', upload.single('image'), (req, res) => {
   if (!req.user) {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   const file = req.file;
@@ -73,7 +73,7 @@ router.delete('/delete/image/:name', (req, res) => {
   if (!req.user) {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   const imageName = req.params.name;

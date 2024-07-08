@@ -7,7 +7,7 @@ async function addComment(req, res, next) {
   if (!user) {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   try {
@@ -27,10 +27,10 @@ async function addComment(req, res, next) {
     }
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   } catch (err) {
-    if (err && err.name === 'ValidationError') {
+    if (err && err.name === 'Error') {
       return res.json({
         error: 1,
         message: err.message,
@@ -45,7 +45,7 @@ async function deleteComment(req, res, next) {
   if (!req.user) {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   try {

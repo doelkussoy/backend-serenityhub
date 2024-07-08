@@ -6,7 +6,7 @@ async function addReport(req, res, next) {
   if (!req.user) {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   try {
@@ -21,12 +21,12 @@ async function addReport(req, res, next) {
     if (newReport) {
       return res.json({
         status: 'ok',
-        message: 'report sent successfully',
+        message: 'Laporan berhasil terkirim',
         idReport: newReport._id,
       });
     }
   } catch (err) {
-    if (err && err.name === 'ValidationError') {
+    if (err && err.name === 'Error') {
       return res.json({
         error: 1,
         message: err.message,
@@ -41,7 +41,7 @@ async function getDetailReport(req, res, next) {
   if (!req.user) {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   try {
@@ -201,7 +201,7 @@ async function assignReportToUnitWork(req, res, next) {
   if (!req.user) {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   try {
@@ -210,7 +210,7 @@ async function assignReportToUnitWork(req, res, next) {
     if (!userRole === 'admin') {
       res.json({
         error: 1,
-        message: 'your not allowed access',
+        message: 'Kamu tidak memiliki akses',
       });
     } else {
       const report = await ReportUser.findOneAndUpdate(
@@ -236,14 +236,14 @@ async function getAllReportCoordinate(req, res, nex) {
   if (!req.user) {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   try {
     if (req.user.role !== 'admin') {
       res.json({
         error: 1,
-        message: 'your not allowed access',
+        message: 'Kamu tidak memiliki akses',
       });
     } else {
       const report = await ReportUser.find().select(
@@ -273,7 +273,7 @@ async function deleteReport(req, res, next) {
   if (req.user.role !== 'admin') {
     res.json({
       error: 1,
-      message: 'your not allowed access',
+      message: 'Kamu tidak memiliki akses',
     });
   }
   try {
@@ -304,7 +304,7 @@ async function getReportByUser(req, res, next) {
   if (!req.user) {
     return res.json({
       error: 1,
-      message: `You're not not login or token expired`,
+      message: `Kamu belum masuk atau token kadaluwarsa`,
     });
   }
   try {
